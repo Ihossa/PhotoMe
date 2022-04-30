@@ -1,0 +1,31 @@
+@import "styles/_colors";
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 0 40px;
+  font-size: 32px;
+  color: $main-text;
+  box-shadow: 0px 4px 10px rgba(55, 56, 63, 0.25);
+  border-radius: 50px;
+  width: min-content;
+  border: none;
+}
+
+.main{
+  background: $main-btn;
+
+  &:hover{
+    background: $main-btn-active;
+  }
+}
+
+.secondary{
+  background: $main-btn;
+
+  &:hover{
+    background: $main-btn-active;
+  }
+}

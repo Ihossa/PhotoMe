@@ -1,8 +1,19 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { appWithTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Home from "./index";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const MyApp = () => {
+  return <Home />
 }
 
-export default MyApp
+// @ts-ignore
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['unAuth']))
+  }
+});
+
+export default appWithTranslation(MyApp);
+
+

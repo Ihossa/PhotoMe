@@ -2,13 +2,23 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: JejuMyeongjo, s-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+*{
+  font-family: JejuMyeongjo;
+  font-weight: 100;
+}
+
+h1 {
+  margin: 0;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  font-family: JejuMyeongjo sans-serif;
 }
 
 * {
