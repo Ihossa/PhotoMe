@@ -1,0 +1,19 @@
+@import "../../styles/colors";
+@import "../../styles/media";
+
+
+.wrap-container{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 0 20px;
+
+  @include small{
+    padding: 0;
+    max-width: 580px;
+  }
+
+  @include extra-large{
+    max-width: 1180px;
+  }
+}

@@ -1,0 +1,26 @@
+@import "styles/_colors";
+@import "styles/media";
+
+.support{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+
+  @include small{
+    margin-top: 50px;
+  }
+}
+
+.support-link{
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.bottom-text{
+  display: block;
+  font-size: 16px;
+  line-height: 21px;
+}

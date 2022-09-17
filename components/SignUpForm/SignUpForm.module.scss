@@ -1,0 +1,58 @@
+@import '../SignInForm/SignInForm.module.scss';
+
+.wrap-input-radio{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 25px;
+}
+
+.wrap-radio{
+  margin-right: 45px;
+  display: flex;
+  align-items: center;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 32px;
+  color: $text-dark;
+}
+
+
+
+.radio {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  display: block;
+  margin-right: 10px;
+}
+
+.radio::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1.5px solid $main-dark;
+}
+
+.radio:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: $main-dark;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}

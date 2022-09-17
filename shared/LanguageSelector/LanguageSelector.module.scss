@@ -1,0 +1,43 @@
+@import "styles/_colors";
+@import "styles/media";
+
+
+.wrap-selector{
+  position: relative;
+}
+
+.content-drop{
+  position: absolute;
+  display: flex;
+  background: white;
+  flex-direction: column;
+  max-width: min-content;
+  margin-top: 5px;
+}
+
+.top-section{
+  background: white;
+}
+
+.header-drop{
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.option{
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  cursor: pointer;
+
+  &:hover{
+    color: $main
+  }
+}
+
+.chosen-label{
+  display: block;
+  margin-right: 4px;
+}

@@ -1,0 +1,30 @@
+{
+  "ignoredKeys": [
+    "checkout:delivery_fields.city",
+    "checkout:delivery_fields.department",
+    "checkout:delivery_fields.street",
+    "checkout:delivery_fields.house",
+    "checkout:delivery_fields.apartment",
+    "checkout:delivery_fields.index",
+    "checkout:delivery_fields.address",
+    "checkout:delivery_fields.firstName",
+    "checkout:delivery_fields.lastName",
+    "checkout:delivery_fields.patronymic",
+    "checkout:delivery_fields.phoneNumber",
+    "dating:interested_in_gender.male",
+    "dating:interested_in_gender.female",
+    "dating:interested_in_gender.both",
+    "dating:show_me_gender.male",
+    "dating:show_me_gender.female",
+    "dating:show_me_gender.both",
+    "header:burger_menu_unauthorized_languages.language_en-US",
+    "header:burger_menu_unauthorized_languages.language_ru-RU",
+    "header:burger_menu_unauthorized_languages.language_uk-UA",
+    "feeds.fashion",
+    "feeds.models",
+    "feeds.dating",
+    "user_settings:en-US",
+    "user_settings:ru-RU",
+    "user_settings:uk-UA"
+  ]
+}

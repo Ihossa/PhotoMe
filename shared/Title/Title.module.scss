@@ -1,0 +1,19 @@
+@import "../../styles/colors";
+@import "../../styles/media";
+
+.title{
+  font-weight: 700;
+  color: $text-dark;
+  padding-left: 15px;
+  border-left: 2px solid $text-dark;
+
+  @include small{
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  @include extra-large{
+    font-size: 36px;
+    line-height: 47px;
+  }
+}

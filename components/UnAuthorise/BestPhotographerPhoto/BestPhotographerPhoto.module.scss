@@ -1,0 +1,139 @@
+@import "styles/_colors";
+@import "styles/media";
+
+.wrap-card-photographer{
+  position: relative;
+  width: 80%;
+  margin: auto;
+
+  @include small{
+    margin: auto;
+    width:90%;
+  }
+
+  .block-info{
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    flex-direction: column-reverse;
+    height: auto;
+    bottom: 0;
+    top: auto;
+    background: rgba(10, 5, 1, 0.4);
+
+
+    @include small{
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      justify-content: space-between;
+      height: -webkit-fill-available;
+    }
+    @include extra-large{
+      display: none;
+    }
+  }
+
+  .icon{
+
+    svg{
+      width: 15px;
+      height: 15px;
+
+      @include small{
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+  }
+
+  &:hover{
+
+    .block-info{
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      padding: 15px;
+      background: rgba(10, 5, 1, 0.4);
+
+      @include small{
+        height: -webkit-fill-available;
+
+      }
+    }
+  }
+}
+
+.block-info{
+  display: none;
+
+
+  .top-section{
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .wrap-location, .wrap-like{
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 13px;
+    color: white;
+    margin-top: 5px;
+
+    @include small{
+      margin-top: 0;
+      font-size: 10px;
+      line-height: 13px;
+    }
+  }
+
+  .text-count{
+    padding-left: 4px;
+  }
+}
+
+
+.img-avatar{
+  width: 100%;
+
+  @include extra-large{
+    height: 467px;
+  }
+}
+
+.name{
+  font-weight: 400;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 21px;
+
+  @include small{
+    font-size: 36px;
+    line-height: 47px;
+    margin: 0;
+  }
+}
+
+.experience{
+  display: none;
+
+  @include small{
+    display: block;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+  }
+}

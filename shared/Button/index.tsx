@@ -8,14 +8,16 @@ export enum BTN_TYPE{
 }
 
  interface IButton{
-    type: BTN_TYPE;
+    typeBtn: BTN_TYPE;
     className?: string;
     children: ReactNode;
+    onClick: () => void;
+    disabled?: boolean
 }
 
 
 export const Button:FC<IButton>  = (props) => (
-    <button className={`${styles['btn']} ${styles[props.type]} ${props.className}`}>
+    <button disabled={props.disabled} type={'submit'} onClick = {props.onClick} className={`${styles['btn']} ${styles[props.typeBtn]} ${props.className}`}>
         {props.children}
     </button>
 )

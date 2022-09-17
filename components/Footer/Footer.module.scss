@@ -1,0 +1,90 @@
+@import "styles/_colors";
+@import "styles/media";
+
+.wrap-footer{
+  margin: 100px 15px 0;
+  padding-bottom: 25px;
+
+  @include small{
+    margin: 100px auto 0;
+    padding-bottom: 50px;
+    max-width: 580px;
+  }
+
+  @include extra-large{
+    max-width: 1180px;
+    margin: 150px auto 0;
+  }
+}
+
+.content-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts{
+  display: flex;
+  flex-direction: column;
+}
+
+.label, .email, .phone, .subscribe{
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  color: $text-dark;
+
+  @include extra-large{
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+
+
+.label{
+  margin-bottom: 15px;
+
+  @include extra-large{
+    margin-bottom: 25px;
+  }
+}
+
+.email{
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+
+  @include extra-large{
+    margin-bottom: 15px;
+  }
+}
+
+.socials{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.subscribe{
+  text-align: right;
+}
+
+.list-social{
+  margin-top: 15px;
+
+  @include extra-large{
+    margin-top: 25px;
+  }
+}
+
+.img-social{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+
+  @include extra-large{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+  }
+}

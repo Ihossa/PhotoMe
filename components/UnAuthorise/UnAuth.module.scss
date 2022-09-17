@@ -1,0 +1,368 @@
+@import "styles/_colors";
+@import "styles/media";
+
+.background{
+  transition: 0.5s;
+  background: $main;
+}
+
+.background-light{
+  transition: 0.5s;
+  background: $background-white;
+}
+
+.top-section{
+
+  @include extra-large{
+    height: 150vh;
+  }
+}
+
+.sticky-elements{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+  @include extra-large{
+    position: sticky;
+    z-index: 2;
+    left: 0;
+    transform: translateX(0);
+    top: 0;
+  }
+}
+
+.header{
+  font-weight: 700;
+  margin: 0 15px 50px;
+  max-width: 1180px;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+
+  @include small{
+    margin: 0 auto 50px;
+  }
+
+  .navigation{
+    display: grid;
+    gap: 5px;
+    text-align: right;
+    align-items: flex-end;
+    font-weight: 400;
+    border-right: 2px solid black;
+    padding-right: 15px;
+
+    @include small{
+      gap: 15px;
+    }
+  }
+
+  .link-sign{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+.wrap-images{
+  position: relative;
+  width: 100%;
+  height: 450px;
+
+  @include small{
+    height: 50vh;
+  }
+
+  @include extra-large{
+    position: static;
+    height: auto;
+  }
+}
+
+.top-img, .right-img, .preload-img{
+  position: absolute;
+
+  @include small{
+    z-index: 3;
+  }
+}
+
+.top-img{
+  top: 0;
+  width: 300px;
+  opacity: 0.5;
+
+  @include small{
+    width: 400px;
+    opacity: 1;
+  }
+
+  @include extra-large{
+    width: 600px;
+  }
+}
+
+.right-img{
+  right: 0;
+  bottom: 25%;
+  width: 200px;
+  opacity: 0.5;
+
+
+  @include small{
+    width: 238px;
+    opacity: 1;
+  }
+
+  @include extra-large{
+    width: 440px;
+  }
+}
+
+.preload-img{
+  left: 25%;
+  bottom: 15px;
+  width: 110px;
+
+  @include small{
+    left: 30%;
+    bottom: 0;
+    width: 150px;
+    height: 150px;
+  }
+
+  @include extra-large{
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.logo{
+  text-align: center;
+  font-weight: bold;
+  font-size: 20vw;
+  text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+
+  @include medium{
+    font-size: 128px;
+    line-height: 169px;
+  }
+
+  @include extra-large{
+    font-size: 250px;
+    line-height: 330px;
+  }
+}
+
+.section-info, .section-benefit{
+  margin: 100px 15px 0;
+  display: flex;
+
+  @include small{
+    margin: 150px auto 0;
+  }
+}
+
+.section-info{
+  justify-content: center;
+  align-items: center;
+  max-width: 580px;
+
+  @include extra-large{
+    justify-content: space-between;
+    max-width: 980px;
+  }
+}
+
+.section-benefit{
+  max-width: 580px;
+  flex-direction: column;
+
+  @include extra-large{
+    max-width: 1180px;
+  }
+}
+
+.benefit-list{
+  margin-top: 50px;
+  display: grid;
+  justify-content: center;
+  gap: 10px;
+
+  @include small{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.benefit-block{
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 329px;
+  width: 100%;
+  height: 200px;
+  cursor: pointer;
+  color: $text-dark;
+  padding: 15px;
+
+  @include extra-large{
+    height: 348px;
+  }
+
+
+  &:hover{
+    background: $background-block;
+    color: $benefit;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+  }
+}
+
+.benefit-icon{
+
+  svg{
+    width: 100px;
+    height: 100px;
+
+    @include extra-large{
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+
+.benefit-description{
+  text-align: center;
+  max-width: 160px;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 21px;
+
+  @include extra-large{
+    max-width: 200px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.img-about{
+  display: none;
+
+  @include extra-large{
+    display: block;
+    min-width: 380px;
+    height: 356px;
+    object-fit: cover;
+  }
+}
+
+.card-description{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  @include small{
+    width: 520px;
+  }
+
+  @include extra-large{
+    width: auto;
+  }
+
+  .header-about{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+
+    @include small{
+      font-size: 36px;
+      line-height: 47px;
+    }
+
+  }
+
+  .description-about{
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 18px;
+
+    @include small{
+      max-width: 422px;
+      font-weight: 200!important;
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    @include extra-large {
+      margin-top: 25px;
+      max-width: 70%;
+    }
+  }
+
+  .join-btn{
+    margin: 25px auto 0;
+    width: 206px;
+    padding: 0;
+
+    @include small{
+      align-self: end;
+    }
+
+    @include extra-large {
+      margin: 50px auto;
+    }
+  }
+}
+
+.list-photographer{
+  display: none;
+
+  @include extra-large{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+.list-photographer-swiper{
+  display: block;
+  margin-top: 50px;
+
+  @include extra-large{
+    display: none;
+  }
+}
+
+.bottom-section{
+  display: grid;
+  gap: 2px;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 21px;
+  color: white;
+}
+
+
+.slogan{
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: $text-dark;
+
+  @include extra-large{
+    font-size: 36px;
+    line-height: 47px;
+  }
+}
+
+.btn-find{
+  margin: 25px auto 0;
+}

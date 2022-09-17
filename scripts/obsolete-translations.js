@@ -73,7 +73,7 @@ const config = JSON.parse(fs.readFileSync(configPath).toString());
         console.log(`${colors.green(fullPath)}:`);
 
         missingKeys.forEach(key => {
-          console.log(`${colors.yellow(key)} not found`);
+          console.log(`${colors.yellow(key)} not used anymore`);
         });
 
         // Make new line after keys

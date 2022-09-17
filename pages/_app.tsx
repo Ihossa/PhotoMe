@@ -1,18 +1,25 @@
 import '../styles/globals.css'
 import { appWithTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Home from "./index";
+import {applyMiddleware, compose, createStore} from "redux";
+import {rootReducer} from "../redux/rootReducer";
+import {Provider} from "react-redux";
+import thunk from "redux-thunk";
 
-const MyApp = () => {
-  return <Home />
-}
+const store = createStore(rootReducer, compose(
+    applyMiddleware(thunk),
+    // @ts-ignore
+))
+
 
 // @ts-ignore
-export const getServerSideProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['unAuth']))
-  }
-});
+const MyApp = ({ Component, pageProps }) => {
+  return (
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+  )
+}
+
 
 export default appWithTranslation(MyApp);
 
