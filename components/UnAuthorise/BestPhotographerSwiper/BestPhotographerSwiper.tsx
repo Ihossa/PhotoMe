@@ -4,14 +4,14 @@ import {Navigation, Pagination} from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import {IPhotographer} from "../../../api/dto/photogapher";
+import {IUser} from "../../../api/dto/photogapher";
 import {BestPhotographerPhoto} from "../BestPhotographerPhoto/BestPhotographerPhoto";
 import {useWindowSize} from "../../../hooks/useWindowSize";
 import {ICON_NAME, Icons} from "../../../lib/icons";
 import {Button} from "../../../shared/Button";
 
 interface IBestPhotographerSwiper {
-    bestPhotographers: IPhotographer[]
+    bestPhotographers: IUser[]
 }
 
 export const BestPhotographerSwiper = (props: IBestPhotographerSwiper) => {

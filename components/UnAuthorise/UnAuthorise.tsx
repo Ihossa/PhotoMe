@@ -9,22 +9,23 @@ import {BTN_TYPE, Button} from "../../shared/Button";
 import {useEffect, useMemo, useRef, useState} from "react";
 import {ICON_NAME, Icons} from "../../lib/icons";
 import {Title} from "../../shared/Title/Title";
-import {useDispatch, useSelector} from "react-redux";
-import {getPhotographerUnAuth} from "../../redux/actions";
-import {IPhotographer} from "../../api/dto/photogapher";
+import {getPhotographerUnAuth} from "../../store/unAuthReducer/actions";
+import {IUser} from "../../api/dto/photogapher";
 import {Footer} from "../Footer/Footer";
 import {isArray} from "util";
 import {BestPhotographerPhoto} from "./BestPhotographerPhoto/BestPhotographerPhoto";
 import {BestPhotographerSwiper} from "./BestPhotographerSwiper/BestPhotographerSwiper";
+import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 
 export const UnAuthorise = () => {
     const { t } = useTranslation('un-auth');
     const router = useRouter();
     const $mainInfoBlock = useRef(null)
     const [isMainContent, setIsMainContent] = useState(false)
-    const dispatch = useDispatch();
-    const photographer:IPhotographer[] = useSelector((state: any) => state.unAuth.photographers)
+    const dispatch = useAppDispatch();
+    const photographer:IUser[] = useAppSelector(state => state.unAuth.photographer)
     const [isPreloader, setIsPreloader] = useState(true)
+
 
     const changeMainBackground = (entries: any) => {
         const [entry] = entries;
@@ -131,7 +132,7 @@ export const UnAuthorise = () => {
                         ))}
                     </div>
                 </section>
-                <section className={styles['section-benefit']}>
+                {photographer?.length > 0 && <section className={styles['section-benefit']}>
                     <Title title={t('un-auth:best-photographer', 'Лучшие фотографы на PhotoMey')} />
                     <div className={styles['list-photographer']}>
                         {isArray(photographer) && photographer.map((photographerItem) => (
@@ -141,7 +142,7 @@ export const UnAuthorise = () => {
                     <div className={styles['list-photographer-swiper']}>
                         <BestPhotographerSwiper bestPhotographers={photographer} />
                     </div>
-                </section>
+                </section>}
                 <section className={styles['section-benefit']}>
                     <span className={styles['slogan']}>{t('un-auth:slogan-footer','Творчество внутри PhotoMey')}</span>
                     <Button className={styles['btn-find']} typeBtn={BTN_TYPE.MAIN} onClick={() => {router.push(ROUTE.ALL.SIGN_IN)}} >

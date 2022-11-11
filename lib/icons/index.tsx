@@ -1,4 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes, FC } from 'react';
+import {jc} from "../../utils";
 
 export enum ICON_NAME {
   ARROW_DOWN = 'arrow_down',
@@ -12,45 +13,24 @@ export enum ICON_NAME {
   NOT_VISIBLE_KEY = 'not-visible-key'
 }
 
-interface IIconsProps extends DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
-  name: ICON_NAME;
-  width?: string;
-  height?: string;
-  color?: string;
-  fill?: string;
-  strokeWidth?: string;
-  stokeWidth?: string;
-  styles?: any;
-  border?: any;
-  markShadow?: any;
-  strokeColor?: any;
-  markColor?: any;
-  bgColor?: any;
+interface IIconsLibraryProps {
+    name: ICON_NAME;
+    width?: string;
+    height?: string;
+    color?: string;
+    fill?: string;
+    strokeWidth?: string;
 }
 
-export const Icons: FC<IIconsProps> = props => {
-  return (
-    <span style={{ ...props.style }} className={ props.className || ''} onClick={props.onClick}>
+interface IIconsProps extends IIconsLibraryProps, DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {}
+
+export const Icons = (props: IIconsProps) => {
+    return (
+        <span style={{ ...props.style }} className={props.className || ''} onClick={props.onClick}>
       <IconsLibrary {...props} />
     </span>
-  );
+    );
 };
-
-interface IIconsLibraryProps {
-  name: ICON_NAME;
-  width?: string;
-  height?: string;
-  color?: string;
-  fill?: string;
-  strokeWidth?: string;
-  stokeWidth?: string;
-  styles?: any;
-  border?: any;
-  markShadow?: any;
-  strokeColor?: any;
-  markColor?: any;
-  bgColor?: any;
-}
 
 const IconsLibrary: FC<IIconsLibraryProps> = props => {
   switch (props.name) {
@@ -145,17 +125,18 @@ const IconsLibrary: FC<IIconsLibraryProps> = props => {
       case ICON_NAME.LOCATION: {
           return (
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M15 2.8125C20.0482 2.8125 24.375 7.13927 24.375 12.1875C24.375 17.2357 15 27.1875 15 27.1875C15 27.1875 5.625 17.2357 5.625 12.1875C5.625 7.13927 9.95177 2.8125 15 2.8125Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <rect x="10.3125" y="7.5" width="9.375" height="9.375" rx="4.6875" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M15 2.8125C20.0482 2.8125 24.375 7.13927 24.375 12.1875C24.375 17.2357 15 27.1875 15 27.1875C15 27.1875 5.625 17.2357 5.625 12.1875C5.625 7.13927 9.95177 2.8125 15 2.8125Z" stroke={props.color || 'currentColor'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <rect x="10.3125" y="7.5" width="9.375" height="9.375" rx="4.6875" stroke={props.color || 'currentColor'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
           )}
 
       case ICON_NAME.LIKE: {
           return (
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M20.625 4.68741C24.1675 4.66792 27.1875 6.44462 27.1875 12.1874C27.1875 17.9302 14.9999 26.2499 14.9999 26.2499C14.9999 26.2499 2.8125 17.9302 2.8125 12.1874C2.8125 6.44462 5.83239 4.69103 9.375 4.68741C11.25 4.6855 13.8298 5.86359 15.0001 7.49991C16.1702 5.86359 18.729 4.69785 20.625 4.68741Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M20.625 4.68741C24.1675 4.66792 27.1875 6.44462 27.1875 12.1874C27.1875 17.9302 14.9999 26.2499 14.9999 26.2499C14.9999 26.2499 2.8125 17.9302 2.8125 12.1874C2.8125 6.44462 5.83239 4.69103 9.375 4.68741C11.25 4.6855 13.8298 5.86359 15.0001 7.49991C16.1702 5.86359 18.729 4.69785 20.625 4.68741Z" stroke={props.color || 'currentColor'} strokeWidth="2" strokeLinejoin="round"/>
               </svg>
           )}
+
       case ICON_NAME.ARROW_NAV: {
           return (
               <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12" fill="none">

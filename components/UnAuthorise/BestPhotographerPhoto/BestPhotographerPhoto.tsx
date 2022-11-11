@@ -3,10 +3,10 @@ import styles from "./BestPhotographerPhoto.module.scss";
 import {ICON_NAME, Icons} from "../../../lib/icons";
 import {Trans} from "next-i18next";
 import {useRouter} from "next/router";
-import {IPhotographer} from "../../../api/dto/photogapher";
+import {IUser} from "../../../api/dto/photogapher";
 
 interface IBestPhotographerPhoto {
-    photographerItem:IPhotographer
+    photographerItem:IUser
 }
 
 export const BestPhotographerPhoto = (props: IBestPhotographerPhoto) => {
@@ -22,11 +22,11 @@ export const BestPhotographerPhoto = (props: IBestPhotographerPhoto) => {
             <div className={styles['block-info']}>
                 <div className={styles['top-section']}>
                     {props.photographerItem.locationWork && <div className={styles['wrap-location']}>
-                        <Icons className={styles['icon']} name={ICON_NAME.LOCATION} />
+                        <Icons color={'white'} className={styles['icon']} name={ICON_NAME.LOCATION} />
                         <span className={styles['text-count']}>{props.photographerItem.locationWork}</span>
                     </div>}
                     <div className={styles['wrap-like']}>
-                        <Icons className={styles['icon']} name={ICON_NAME.LIKE} />
+                        <Icons color={'white'} className={styles['icon']} name={ICON_NAME.LIKE} />
                         <span className={styles['text-count']}>{props.photographerItem.countLike}4</span>
                     </div>
                 </div>

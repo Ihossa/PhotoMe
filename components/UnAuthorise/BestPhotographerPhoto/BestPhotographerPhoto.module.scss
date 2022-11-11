@@ -38,6 +38,7 @@
   .icon{
 
     svg{
+      stroke: #FFFFFF!important;
       width: 15px;
       height: 15px;
 
@@ -49,7 +50,7 @@
 
   }
 
-  &:hover{
+  //&:hover{
 
     .block-info{
       position: absolute;
@@ -66,7 +67,7 @@
         height: -webkit-fill-available;
 
       }
-    }
+    //}
   }
 }
 
@@ -98,7 +99,11 @@
   }
 
   .text-count{
+    color: white;
     padding-left: 4px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
   }
 }
 

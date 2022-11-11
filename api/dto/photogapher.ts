@@ -1,9 +1,4 @@
-export interface IResultToken{
-    status: string,
-    token: string,
-}
-
-export interface IPhotographer {
+export interface IUser {
     addFunctionality: string[]
     avatar?:{
         file: any
